@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+#map {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+.sidebar-left {
+  position: fixed;
+  top: 150px;
+  left: 15px;
+  width: 280px;
+  height: 50vh;
+  padding: 12px;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+  z-index: 1000;
+  border-radius: 20px;
+}
+
+.sidebar-left-top {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  width: 280px;
+  height: 18vh;
+  padding: 12px;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+  z-index: 1000;
+  border-radius: 20px;
+}
+
+.sidebar-right {
+  position: fixed;
+  top: 80px;
+  right: 0px;
+  width: 260px;
+  height: 80vh;
+  padding: 12px;
+  border-left: 1px solid #ddd;
+  overflow-y: auto;
+  z-index: 1000;
+  border-radius: 15px 0px 0px 15px;
+}
+
+.profile {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  padding: 12px;
+  z-index: 1000;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ddd;
+}
+
+.user-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.sidebar-left,
+.sidebar-right,
+.sidebar-left-top {
+  background: #ffffff;
+  border: none;
+  box-shadow: none;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  padding: 14px;
+  margin-bottom: 12px;
+
+  box-shadow: 
+    0 8px 24px rgba(0,0,0,0.15),
+    inset 0 1px 0 rgba(255,255,255,0.4); 
+
+  /* border-left: 5px solid #007bff; */
+
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-2px) scale(1.01);
+  /* box-shadow: 
+    0 12px 32px rgba(0,0,0,0.2); */
+}
+
+
+.status {
+  background: orange;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.search-box input,
+.search-box button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.leaflet-control-zoom {
+  display: none !important;
+}
+
+.leaflet-top.leaflet-top {
+  display: none;
+}
+
+.title-sidebar-right {
+  padding-bottom: 10px;
+}
