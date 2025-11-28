@@ -20,7 +20,7 @@ body {
 
 .sidebar-left {
   position: fixed;
-  top: 150px;
+  top: 100px;
   left: 15px;
   width: 280px;
   height: 50vh;
@@ -36,7 +36,7 @@ body {
   top: 15px;
   left: 15px;
   width: 280px;
-  height: 18vh;
+  height: 9vh;
   padding: 12px;
   border-right: 1px solid #ddd;
   overflow-y: auto;
@@ -44,11 +44,16 @@ body {
   border-radius: 20px;
 }
 
+.tracar-rota {
+  width: 50px;
+  background-color: #ccc;
+}
+
 .sidebar-right {
   position: fixed;
   top: 80px;
   right: 0px;
-  width: 260px;
+  width: 250px;
   height: 80vh;
   padding: 12px;
   border-left: 1px solid #ddd;
@@ -114,16 +119,21 @@ body {
   color: white;
   padding: 4px 10px;
   border-radius: 20px;
-  font-size: 12px;
+  font-size: 15px;
+  
 }
 
 .search-box input,
 .search-box button {
-  width: 100%;
   padding: 10px;
   margin-bottom: 6px;
   border-radius: 8px;
   border: 1px solid #ccc;
+}
+
+.tracar-rota img {
+  width: 10px;
+  height: 10px;
 }
 
 .leaflet-control-zoom {
