@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
   <link rel="stylesheet" href="src/css/mapa.css">
+
+  <link href='https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap' rel='stylesheet'>
 </head>
 <body>
 
@@ -21,39 +23,41 @@
   </div>
 
   <div class="sidebar-left">
-    
-
+    <div class="title-sidebar-right"><p class="title-sidebar-right-letter">Rotas Publicadas</p></div>
     <div class="card">
-      <strong>Igor</strong>⭐ 4.5<br>
-      
+      <h3>Igor</h3>⭐ 4.5<br>
       Rota: ESUDA → Janga<br>
-      
       Horário: 22:00
     </div>
   </div>
 
   <div class="profile">
-    <img class="user-icon" src="src/img/user-icon.png" alt="profile">
+    <button type="button" class="button-overlay" onclick="abrirOverlay()">
+      <img class="user-icon" src="src/img/user-icon.png" alt="profile">
+    </button>
+
+    <div id="overlay" class="overlay" onclick="fecharOverlay()">
+      <div class="conteudo" onclick="event.stopPropagation()">
+
+        <div class="div-button-close">
+          <button class="button-close" onclick="fecharOverlay()">
+            <img class="close-icon" src="src/img/close-icon.png" alt="profile">
+          </button>
+        </div>
+        <img class="user-icon" src="src/img/user-icon.png" alt="profile">
+        <h2>Usuário</h2><br>
+        <button class="button-option-perfil">Editar perfil</button>
+        <p></p>
+      </div>
+    </div>
   </div>
 
   <div class="sidebar-right">
-    <div class="title-sidebar-right"><h3>Corridas solicitadas</h3></div>
+    <div class="title-sidebar-right"><p class="title-sidebar-right-letter">Corridas Solicitadas</p></div>
     <div class="card">
-      <strong>Daniel</strong><br><br>
-      Rota: ESUDA → Janga<br><br>
-      <span class="status">Pendente</span>
-    </div>
-
-    <div class="card">
-      <strong>Daniel</strong><br><br>
-      Rota: ESUDA → Janga<br><br>
-      <span class="status">Pendente</span>
-    </div>
-
-    <div class="card">
-      <strong>Daniel</strong><br><br>
-      Rota: ESUDA → Janga<br><br>
-      <span class="status">Pendente</span>
+      <h3>Daniel</h3><br>
+      <strong>Rota</strong> ESUDA → Janga<br><br>
+      <span class="status"><strong>Pendente</strong></span>
     </div>
   </div>
 

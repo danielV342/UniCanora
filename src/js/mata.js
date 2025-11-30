@@ -18,7 +18,6 @@ var routing = L.Routing.control({
 function definirDestino() {
   var destino = document.getElementById("destino").value;
 
-  // Geocodificação (converter endereço em coordenadas)
   fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${destino}`)
     .then(res => res.json())
     .then(data => {
@@ -26,7 +25,6 @@ function definirDestino() {
         var lat = parseFloat(data[0].lat);
         var lon = parseFloat(data[0].lon);
 
-        // Atualiza rota
         routing.setWaypoints([
           L.latLng(-8.053804,-34.8851482,18), // mantém a origem
           L.latLng(lat, lon)        // novo destino
@@ -34,4 +32,13 @@ function definirDestino() {
       }
     });
     
+}
+
+
+function abrirOverlay() {
+  document.getElementById("overlay").style.display = "flex";
+}
+
+function fecharOverlay() {
+  document.getElementById("overlay").style.display = "none";
 }
