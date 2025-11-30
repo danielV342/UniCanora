@@ -36,10 +36,9 @@ body {
   top: 15px;
   left: 15px;
   width: 280px;
-  height: 9vh;
+  height: 6.5vh;
   padding: 12px;
   border-right: 1px solid #ddd;
-  overflow-y: auto;
   z-index: 1000;
   border-radius: 20px;
 }
