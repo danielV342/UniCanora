@@ -77,8 +77,8 @@
   </div>
 </div>
 
-  <!-- PERFIL DO USUÁRIO -->
-  <div class="profile">
+<!-- PERFIL DO USUÁRIO -->
+<div class="profile">
     <div style="width: 100%; height: 100%;">
     <button type="button" class="button-overlay" onclick="abrirOverlay()">
       <img class="user-icon" src="src/img/user-icon.png" alt="profile">
@@ -95,16 +95,24 @@
         </div>
 
         <img class="user-icon" src="src/img/user-icon.png" alt="profile">
-        <h2 class="nome-motorista">Usuário</h2>
-
+        <h2 class="nome-motorista">Daniel12</h2>
+        <div class="info-carona">
+          <p class="tittle-info">Nome completo</p>
+          <p>Daniel Viana Dias</p><br>
+          <p class="tittle-info">E-mail</p>
+          <p>17242199@esuda.edu.br</p><br>
+          <p class="tittle-info">Telefone</p>
+          <p>(81) 9 9358-9425</p><br>
+        </div>
         <button class="button-option-perfil">Editar perfil</button>
+        <button class="button-option-perfil">Alterar senha</button>
       </div>
     </div>
 
-  </div>
+</div>
 
-  <!-- SIDEBAR DIREITA -->
-  <div class="sidebar-right">
+<!-- SIDEBAR DIREITA -->
+<div class="sidebar-right">
     <div class="title-sidebar-right">
       <p class="title-sidebar-letter">Corridas Solicitadas</p>
     </div>
@@ -115,6 +123,7 @@
       <span class="status"><strong>Pendente</strong></span>
     </div>
     </button>
+    
     <!-- SOBREPOSIÇÃO SIDEBAR DIREITA -->
     <div id="overlay-sidebar-right-card" class="overlay-sidebar-right-card" onclick="fecharOverlaySidebarRightCard()">
       <div class="conteudo" onclick="event.stopPropagation()">
@@ -130,7 +139,7 @@
 
       </div>
     </div>
-  </div>
+</div>
 
   <!-- SCRIPTS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
