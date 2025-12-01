@@ -19,8 +19,8 @@
   <!-- BARRA SUPERIOR ESQUERDA -->
   <div class="sidebar-left-top">
     <div class="search-box">
-      <input id="destino" type="text" placeholder="Procurar rota...">
-      <button class="tracar-rota" onclick="definirDestino()">
+      <input style="width: 82%;" id="destino" type="text" placeholder="Publicar rota...">
+      <button style="width: 15%;" class="tracar-rota" onclick="definirDestino()">
         <img src="src/img/Search_Icon.png" alt="search-ico">
       </button>
     </div>
@@ -30,19 +30,52 @@
 <div class="sidebar-left">
 
     <div class="title-sidebar-left">
-      <p class="title-sidebar-letter">Rotas Publicadas</p>
+      <p class="title-sidebar-letter">Solicitações</p>
     </div>
 
     <button class="buttom-sidebar-left-card" onclick="abrirOverlaySidebarLeftCard()">
       <div class="card">
-        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;"><h2 class="nome-motorista">Igor</h2>⭐ 4.5<br></div>
+        <div class="card-content"><h2 class="nome-motorista">Igor</h2>⭐ 4.5<br></div>
         
-        <div style="display: flex; flex-direction: column; align-items: flex-start; width: 100%; margin-top: 6px;">
-            <p>ESUDA → Janga</p>
-            <p>Horário: 22:00</p>
+        <div class="card-content-info-title">
+            <div>
+              <img 
+              style="width: 30px; height: 30px;"src="src/img/user-icon.png" alt="user-ico">
+            </div>
+            <div style="width: 63%; display: flex; align-items: flex-start;">Rota</div>
+            <div style="width: 25%; display: flex; align-items: flex-start;">Horário</div>
+        </div>
+        <div class="card-content-info">
+          <div style="width: 30px; height: 30px;"></div>
+          <div style="width: 63%; display: flex; align-items: flex-start;">ESUDA - Afogados</div>
+          <div style="width: 25%; display: flex; align-items: flex-start;" >22:00</div>
         </div>
       </div>
     </button>
+
+    <!-- SOBREPOSIÇÃO TRACAR ROTA -->
+<div id="overlay-tracar" class="overlay-tracar" onclick="fecharOverlayTracar()">
+  <div class="card" onclick="event.stopPropagation()">
+
+    <div class="div-button-close">
+      <button class="button-close" onclick="fecharOverlayTracar()">
+        <img class="close-icon" src="src/img/close-icon.png" alt="close">
+      </button>
+    </div>
+    <div style="display: flex; flex-direction: row; gap: 8px;">
+      <p>ESUDA</p>
+      <p>-</p>
+      <p id="local"></p>
+    </div>
+    <p style="margin-top: 15px" >Informe o horário</p>  
+    <input style="margin-bottom: 15px;" placeholder="Digite aqui o horário" type="times">
+
+      <button class="btn-solicitar-carona">
+        <p class="txt-solicitar-carona">PUBLICAR ROTA</p>
+      </button>
+    </div>
+
+  </div>
 
 </div>
 
@@ -113,17 +146,17 @@
 <!-- SIDEBAR DIREITA -->
 <div class="sidebar-right">
     <div class="title-sidebar-right">
-      <p class="title-sidebar-letter">Corridas Solicitadas</p>
+      <p class="title-sidebar-letter">Passageiros aceitos</p>
     </div>
     <button class="buttom-sidebar-right-card" onclick="abrirOverlaySidebarRightCard()">
     <div class="card">
       <h3 class="nome-motorista">Daniel</h3><br>
       <strong>Rota:</strong> ESUDA → Janga<br><br>
-      <span class="status"><strong>Pendente</strong></span>
+      <span class="chat"><strong>CHAT</strong></span>
     </div>
     </button>
-    
-    <!-- SOBREPOSIÇÃO SIDEBAR DIREITA -->
+</div>
+<!-- SOBREPOSIÇÃO SIDEBAR DIREITA -->
     <div id="overlay-sidebar-right-card" class="overlay-sidebar-right-card" onclick="fecharOverlaySidebarRightCard()">
       <div class="conteudo" onclick="event.stopPropagation()">
 
@@ -138,14 +171,13 @@
 
       </div>
     </div>
-</div>
 
 
 
   <!-- SCRIPTS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
-  <script src="src/js/mata.js"></script>
+  <script src="src/js/mapa.js"></script>
 
 </body>
 </html>

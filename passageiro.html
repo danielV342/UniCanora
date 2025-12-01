@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniCarona</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+  <link rel="stylesheet" href="src/css/mapa.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- MAPA -->
+  <div id="map"></div>
+
+  <!-- BARRA SUPERIOR ESQUERDA -->
+  <div class="sidebar-left-top">
+    <div class="search-box">
+      <input id="destino" type="text" placeholder="Procurar rota...">
+      <button class="tracar-rota" onclick="definirDestino()">
+        <img src="src/img/Search_Icon.png" alt="search-ico">
+      </button>
+    </div>
+  </div>
+
+ <!-- SIDEBAR ESQUERDA -->
+<div class="sidebar-left">
+
+    <div class="title-sidebar-left">
+      <p class="title-sidebar-letter">Rotas Publicadas</p>
+    </div>
+
+    <button class="buttom-sidebar-left-card" onclick="abrirOverlaySidebarLeftCard()">
+      <div class="card">
+        <div class="card-content"><h2 class="nome-motorista">Igor</h2>⭐ 4.5<br></div>
+        
+        <div class="card-content-info-title">
+            <div>
+              <img 
+              style="width: 30px; height: 30px;"src="src/img/user-icon.png" alt="user-ico">
+            </div>
+            <div style="width: 63%; display: flex; align-items: flex-start;">Rota</div>
+            <div style="width: 25%; display: flex; align-items: flex-start;">Horário</div>
+        </div>
+        <div class="card-content-info">
+          <div style="width: 30px; height: 30px;"></div>
+          <div style="width: 63%; display: flex; align-items: flex-start;">ESUDA - Afogados</div>
+          <div style="width: 25%; display: flex; align-items: flex-start;" >22:00</div>
+        </div>
+      </div>
+    </button>
+
+</div>
+
+<!-- SOBREPOSIÇÃO SIDEBAR ESQUERDA -->
+<div id="overlay-sidebar-left-card" class="overlay-sidebar-left-card" onclick="fecharOverlaySidebarLeftCard()">
+  <div class="conteudo" onclick="event.stopPropagation()">
+
+    <div class="div-button-close">
+      <button class="button-close" onclick="fecharOverlaySidebarLeftCard()">
+        <img class="close-icon" src="src/img/close-icon.png" alt="close">
+      </button>
+    </div>
+
+    <div class="nome-foto-motorista">
+      <img class="user-icon" src="src/img/user-icon.png" alt="profile">
+      <h2 class="nome-motorista">Motorista</h2>
+    </div>
+
+    <div class="info-carona">
+      <p class="tittle-info">Origem</p>
+      <p>Faculdade ESUDA</p><br>
+      <p class="tittle-info">Destino</p>
+      <p>Janga</p><br>
+      <p class="tittle-info">Horário</p>
+      <p>22:00</p><br>
+
+      <button class="btn-solicitar-carona">
+        <p class="txt-solicitar-carona">SOLICITAR</p>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- PERFIL DO USUÁRIO -->
+<div class="profile">
+  <div style="width: 100%; height: 100%;">
+    <button type="button" class="button-overlay" onclick="abrirOverlayPerfil()">
+    <img class="user-icon" src="src/img/user-icon.png" alt="profile">
+    </button>
+  </div>
+</div>
+<!-- SOBREPOSIÇÃO PERFIL -->
+    <div id="overlay-perfil" class="overlay-perfil" onclick="fecharOverlayPerfil()">
+      <div class="conteudo" onclick="event.stopPropagation()">
+
+        <div class="div-button-close">
+          <button class="button-close" onclick="fecharOverlayPerfil()">
+            <img class="close-icon" src="src/img/close-icon.png" alt="close">
+          </button>
+        </div>
+
+        <img class="user-icon" src="src/img/user-icon.png" alt="profile">
+        <h2 class="nome-motorista">Daniel12</h2>
+        <div class="info-carona">
+          <p class="tittle-info">Nome completo</p>
+          <p>Daniel Viana Dias</p><br>
+          <p class="tittle-info">E-mail</p>
+          <p>17242199@esuda.edu.br</p><br>
+          <p class="tittle-info">Telefone</p>
+          <p>(81) 9 9358-9425</p><br>
+        </div>
+        <button class="button-option-perfil">Editar perfil</button>
+        <button class="button-option-perfil">Alterar senha</button>
+      </div>
+    </div>
+
+<!-- SIDEBAR DIREITA -->
+<div class="sidebar-right">
+    <div class="title-sidebar-right">
+      <p class="title-sidebar-letter">Corridas Solicitadas</p>
+    </div>
+    <button class="buttom-sidebar-right-card" onclick="abrirOverlaySidebarRightCard()">
+    <div class="card">
+      <h3 class="nome-motorista">Daniel</h3><br>
+      <strong>Rota:</strong> ESUDA → Janga<br><br>
+      <span class="status"><strong>Pendente</strong></span>
+    </div>
+    </button>
+</div>
+<!-- SOBREPOSIÇÃO SIDEBAR DIREITA -->
+    <div id="overlay-sidebar-right-card" class="overlay-sidebar-right-card" onclick="fecharOverlaySidebarRightCard()">
+      <div class="conteudo" onclick="event.stopPropagation()">
+
+        <div class="div-button-close">
+          <button class="button-close" onclick="fecharOverlaySidebarRightCard()">
+            <img class="close-icon" src="src/img/close-icon.png" alt="close">
+          </button>
+        </div>
+
+        <h2 class="nome-motorista">Motorista</h2> 
+        <p>Informações da rota selecionada.</p>
+
+      </div>
+    </div>
+
+
+
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+  <script src="src/js/mapa.js"></script>
+
+</body>
+</html>

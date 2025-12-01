@@ -35,7 +35,14 @@ function definirDestino() {
         ]);
       }
     });
-    
+  
+
+  document.getElementById("overlay-tracar").style.display = "flex";
+  document.getElementById("local").innerHTML = destino;
+}
+
+function fecharOverlayTracar() {
+  document.getElementById("overlay-tracar").style.display = "none";
 }
 
 //FUNÇÃO ABRIR OVERLAY DO PERFIL
