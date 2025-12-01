@@ -64,3 +64,12 @@ function abrirOverlaySidebarRightCard() {
 function fecharOverlaySidebarRightCard() {
   document.getElementById("overlay-sidebar-right-card").style.display = "none"
 }
+
+
+function abrirOverlayPerfil() {
+  document.getElementById("overlay-perfil").style.display = "flex";
+}
+
+function fecharOverlayPerfil() {
+  document.getElementById("overlay-perfil").style.display = "none";
+}

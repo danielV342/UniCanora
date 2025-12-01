@@ -79,17 +79,18 @@
 
 <!-- PERFIL DO USUÁRIO -->
 <div class="profile">
-    <div style="width: 100%; height: 100%;">
-    <button type="button" class="button-overlay" onclick="abrirOverlay()">
-      <img class="user-icon" src="src/img/user-icon.png" alt="profile">
+  <div style="width: 100%; height: 100%;">
+    <button type="button" class="button-overlay" onclick="abrirOverlayPerfil()">
+    <img class="user-icon" src="src/img/user-icon.png" alt="profile">
     </button>
-    </div>
-    <!-- SOBREPOSIÇÃO PERFIL -->
-    <div id="overlay" class="overlay" onclick="fecharOverlay()">
+  </div>
+</div>
+<!-- SOBREPOSIÇÃO PERFIL -->
+    <div id="overlay-perfil" class="overlay-perfil" onclick="fecharOverlayPerfil()">
       <div class="conteudo" onclick="event.stopPropagation()">
 
         <div class="div-button-close">
-          <button class="button-close" onclick="fecharOverlay()">
+          <button class="button-close" onclick="fecharOverlayPerfil()">
             <img class="close-icon" src="src/img/close-icon.png" alt="close">
           </button>
         </div>
@@ -108,8 +109,6 @@
         <button class="button-option-perfil">Alterar senha</button>
       </div>
     </div>
-
-</div>
 
 <!-- SIDEBAR DIREITA -->
 <div class="sidebar-right">
@@ -140,6 +139,8 @@
       </div>
     </div>
 </div>
+
+
 
   <!-- SCRIPTS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>

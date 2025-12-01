@@ -173,6 +173,7 @@ body {
    OVERLAYS (TODAS)
 ============================ */
 .overlay,
+.overlay-perfil,
 .overlay-sidebar-left-card,
 .overlay-sidebar-right-card {
   position: fixed;
@@ -201,6 +202,7 @@ body {
 }
 
 .overlay,
+.overlay-perfil,
 .overlay-sidebar-left-card,
 .overlay-sidebar-right-card {
   z-index: 9999 !important; /* sempre por cima de tudo */
