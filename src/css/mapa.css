@@ -1,3 +1,6 @@
+/* ============================
+   RESET
+============================ */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,33 +13,30 @@ body {
   overflow: hidden;
 }
 
+/* ============================
+   MAPA (FUNDO)
+============================ */
 #map {
   position: fixed;
   inset: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 1;
+  z-index: 1; /* sempre atrás de tudo */
 }
 
-.sidebar-left {
-  position: fixed;
-  top: 100px;
-  left: 15px;
-  width: 280px;
-  height: 50vh;
-  padding: 12px;
-  border-right: 1px solid #ddd;
-  overflow-y: auto;
-  z-index: 1000;
-  border-radius: 20px;
-}
+/* ============================
+   CAMADAS (Z-INDEX)
+============================ */
+/*
+  1 = mapa
+  100 = sidebars
+  100 = perfil
+  9999 = overlays (sempre no topo)
+*/
 
-.title-sidebar-right-letter {
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-}
- 
+/* ============================
+   SIDEBAR ESQUERDA SUPERIOR
+============================ */
 .sidebar-left-top {
   position: fixed;
   top: 15px;
@@ -44,16 +44,36 @@ body {
   width: 280px;
   height: 6.5vh;
   padding: 12px;
-  border-right: 1px solid #ddd;
-  z-index: 1000;
   border-radius: 20px;
+  background: white;
+  z-index: 100;
 }
 
-.tracar-rota {
-  width: 50px;
-  background-color: #ccc;
+/* ============================
+   SIDEBAR ESQUERDA (LISTA)
+============================ */
+.sidebar-left {
+  position: fixed;
+  top: 100px;
+  left: 15px;
+  width: 280px;
+  height: 50vh;
+  padding: 12px;
+  overflow-y: auto;
+  border-radius: 20px;
+  background: white;
+  z-index: 100;
 }
 
+.title-sidebar-letter {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* ============================
+   SIDEBAR DIREITA
+============================ */
 .sidebar-right {
   position: fixed;
   top: 80px;
@@ -61,12 +81,15 @@ body {
   width: 250px;
   height: 80vh;
   padding: 12px;
-  border-left: 1px solid #ddd;
   overflow-y: auto;
-  z-index: 1000;
-  border-radius: 15px 0px 0px 15px;
+  border-radius: 15px 0 0 15px;
+  background: white;
+  z-index: 100;
 }
 
+/* ============================
+   PERFIL
+============================ */
 .profile {
   position: fixed;
   top: 10px;
@@ -74,13 +97,12 @@ body {
   width: 50px;
   height: 50px;
   padding: 12px;
-  z-index: 1000;
-  border: 1px solid #ddd;
-  border-radius: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50px;
   background-color: #ddd;
+  z-index: 100;
 }
 
 .user-icon {
@@ -88,21 +110,15 @@ body {
   height: 30px;
 }
 
-
-
-.sidebar-left,
-.sidebar-right,
-.sidebar-left-top {
-  background: #ffffff;
-  border: none;
-  box-shadow: none;
-}
-
+/* ============================
+   CARDS
+============================ */
 .card {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 18px;
   padding: 8px;
@@ -110,9 +126,7 @@ body {
 
   box-shadow: 
     0 8px 24px rgba(0,0,0,0.15),
-    inset 0 1px 0 rgba(255,255,255,0.4); 
-
-  /* border-left: 5px solid #007bff; */
+    inset 0 1px 0 rgba(255,255,255,0.4);
 
   transition: all 0.2s ease;
   cursor: pointer;
@@ -120,20 +134,20 @@ body {
 
 .card:hover {
   transform: translateY(-2px) scale(1.01);
-  /* box-shadow: 
-    0 12px 32px rgba(0,0,0,0.2); */
 }
 
-
+/* STATUS */
 .status {
   background: orange;
-  color: rgb(0, 0, 0);
+  color: black;
   padding: 10px 45px;
   border-radius: 20px;
   font-size: 15px;
-  
 }
 
+/* ============================
+   BUSCA
+============================ */
 .search-box input,
 .search-box button {
   padding: 10px;
@@ -147,59 +161,93 @@ body {
   height: 10px;
 }
 
-.leaflet-control-zoom {
+/* ============================
+   REMOÇÃO DO ZOOM/CONTROLES DO MAPA
+============================ */
+.leaflet-control-zoom,
+.leaflet-top.leaflet-top {
   display: none !important;
 }
 
-.leaflet-top.leaflet-top {
-  display: none;
-}
-
-.title-sidebar-right {
-  padding-bottom: 10px;
-}
-
-.overlay {
+/* ============================
+   OVERLAYS (TODAS)
+============================ */
+.overlay,
+.overlay-sidebar-left-card,
+.overlay-sidebar-right-card {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* fundo escurecido */
-  display: none; /* começa invisível */
+  
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+
+  display: none;         /* aparece com JS */
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(3px); /* opcional */
+  
+  z-index: 9999;
 }
 
+.sidebar-left,
+.sidebar-right,
+.sidebar-left-top {
+  background: #ffffff;
+  border: none;
+  box-shadow: none;
+  z-index: 100 !important; /* abaixo do overlay */
+}
+
+.overlay,
+.overlay-sidebar-left-card,
+.overlay-sidebar-right-card {
+  z-index: 9999 !important; /* sempre por cima de tudo */
+}
+
+
+/* Conteúdo dentro da overlay */
 .conteudo {
   background: white;
   padding: 20px;
   border-radius: 12px;
   width: 300px;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
+/* ============================
+   BOTÕES
+============================ */
 .button-overlay,
-.button-close {
+.button-close,
+.buttom-sidebar-left-card,
+.buttom-sidebar-right-card {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.button-close {
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .div-button-close {
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  
+  justify-content: flex-end;
 }
 
 .button-close:hover {
-  border: none;
   background-color: red;
   border-radius: 5px;
 }
@@ -214,4 +262,41 @@ body {
   height: 3vh;
   border-radius: 5px;
   background-color: aquamarine;
+}
+
+/* Nome e foto */
+.nome-foto-motorista {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nome-motorista {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.info-carona {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tittle-info {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+}
+
+.btn-solicitar-carona {
+  background-color: rgb(0, 255, 34);
+  width: 100%;
+  height: 4vh;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.txt-solicitar-carona {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
 }
