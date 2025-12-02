@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UniCarona</title>
-
+  <link rel="shortcut icon" href="/src/img/logo-unicarona.png" type="image/x-icon">
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
   <link rel="stylesheet" href="src/css/mapa.css">
@@ -33,7 +33,7 @@
       <p class="title-sidebar-letter">Solicitações</p>
     </div>
 
-    <button class="buttom-sidebar-left-card" onclick="abrirOverlaySidebarLeftCard()">
+    <button id="buttom-sidebar-left-card" class="buttom-sidebar-left-card" onclick="abrirOverlaySidebarLeftCard()">
       <div class="card">
         <div class="card-content"><h2 class="nome-motorista">Igor</h2>⭐ 4.5<br></div>
         
@@ -91,18 +91,18 @@
 
     <div class="nome-foto-motorista">
       <img class="user-icon" src="src/img/user-icon.png" alt="profile">
-      <h2 class="nome-motorista">Motorista</h2>
+      <h2 class="nome-motorista">Igor</h2>
     </div>
 
     <div class="info-carona">
       <p class="tittle-info">Origem</p>
       <p>Faculdade ESUDA</p><br>
       <p class="tittle-info">Destino</p>
-      <p>Janga</p><br>
+      <p>Afogados</p><br>
       <p class="tittle-info">Horário</p>
       <p>22:00</p><br>
 
-      <button class="btn-solicitar-carona">
+      <button class="btn-solicitar-carona" onclick="aceitarPassageiro()">
         <p class="txt-solicitar-carona">ACEITAR</p>
       </button>
     </div>
@@ -151,7 +151,15 @@
     <button class="buttom-sidebar-right-card" onclick="abrirOverlaySidebarRightCard()">
     <div class="card">
       <h3 class="nome-motorista">Daniel</h3><br>
-      <strong>Rota:</strong> ESUDA → Janga<br><br>
+      <strong>Rota:</strong> ESUDA → Mangueira<br><br>
+      <span class="chat"><strong>CHAT</strong></span>
+    </div>
+    </button>
+
+    <button style="display: none;" id="card1" class="buttom-sidebar-right-card" onclick="abrirOverlaySidebarRightCard()">
+    <div class="card">
+      <h3 class="nome-motorista">Igor</h3><br>
+      <strong>Rota:</strong> ESUDA → Mangueira<br><br>
       <span class="chat"><strong>CHAT</strong></span>
     </div>
     </button>

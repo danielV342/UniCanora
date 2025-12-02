@@ -78,7 +78,7 @@ function abrirOverlayPerfil() {
 }
 
 function fecharOverlayPerfil() {
-  document.getElementById("overlay-perfil").style.display = "none";
+  document.getElementById("overlay-perfil").style.display = "none"
 }
 
 function solicitarCorrida() {
@@ -88,12 +88,20 @@ function solicitarCorrida() {
 
 }
 
+
 function cancelarCorrida() {
   document.getElementById("buttom-sidebar-right-card").style.display = "none"
   document.getElementById("card1").style.display = "flex"
 }
 
-const btn = document.getElementById("status");
+function aceitarPassageiro() {
+  document.getElementById('card1').style.display = "flex"
+  document.getElementById('overlay-sidebar-left-card').style.display = "none"
+  document.querySelector(".buttom-sidebar-left-card").style.display = "none"
+}
 
-  btn.onmouseover = () => btn.textContent = "Cancelar?";
-  btn.onmouseout  = () => btn.textContent = "Pendente";
+
+const btn = document.getElementById("status")
+
+  btn.onmouseover = () => btn.textContent = "Cancelar?"
+  btn.onmouseout  = () => btn.textContent = "Pendente"
