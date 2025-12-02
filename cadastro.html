@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="src/imagens/logo_unicarona.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="src/css/reset.css">
+    <link rel="stylesheet" href="src/css/cadastro.css">
+    <link rel="stylesheet" href="src/css/responsivo.css">
+    <title>Cadastro - UniCarona</title>
+</head>
+<body>
+    <div class="container">
+        <section class="image-section">
+        </section>
+        
+        <section class="form-section">
+            <div class="form-container fade-in">
+                <div class="logo">
+                    <img src="src/img/logo-unicarona.png" alt="">
+                </div>
+                
+                <h2 class="form-title">Crie sua conta</h2>
+                <p class="form-subtitle">Preencha os dados abaixo para criar sua conta</p>
+                
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label for="name">Nome completo</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="name" class="form-control" placeholder="Digite seu nome completo">
+                        </div>
+                        <div class="error-message" id="nameError">Por favor, insira seu nome completo</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" class="form-control" placeholder="matricula@faculdade.com.br">
+                        </div>
+                        <div class="error-message" id="emailError">Por favor, insira um e-mail válido</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Telefone</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="phone" class="form-control" placeholder="(81) 99999-9999">
+                        </div>
+                        <div class="error-message" id="phoneError">Por favor, insira um telefone válido</div>
+                    </div>
+
+                    <div class="select-group">
+                        <label for="gender">Passageiro ou Motorista?</label>
+                        <select id="gender" class="select-control">
+                            <option value="" disabled selected hidden>Selecione</option>
+                            <option value="male">Passageiro</option>
+                            <option value="female">Motorista</option>
+                            <option value="other">Ambos</option>
+                        </select>
+                        <div class="error-message" id="genderError">Por favor, selecione uma opção</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" class="form-control" placeholder="Crie uma senha segura">
+                        </div>
+                        <div class="error-message" id="passwordError">A senha deve ter pelo menos 8 caracteres</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirmar senha</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="confirmPassword" class="form-control" placeholder="Digite a senha novamente">
+                        </div>
+                        <div class="error-message" id="confirmPasswordError">As senhas não coincidem</div>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">Criar conta</button>
+                    
+                    <div class="divider">
+                        <span>Ou entre com</span>
+                    </div>
+                    
+                    <button type="button" class="btn-google" id="googleLogin">
+                        <i class="fab fa-google"></i> Entrar com Google
+                    </button>
+                </form>
+                
+                <div class="login-link">
+                    Já tem uma conta? <a href="#">Faça login</a>
+                </div>
+
+                <div class="success-message" id="successMessage">
+                    <i class="fas fa-check-circle"></i> Cadastro realizado com sucesso!
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="src/js/cadastro.js"></script>
+</body>
+</html>
