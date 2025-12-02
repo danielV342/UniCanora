@@ -15,26 +15,26 @@
 
   <!-- MAPA -->
   <div id="map"></div>
-
-  <!-- BARRA SUPERIOR ESQUERDA -->
+<!-- 
+ BARRA SUPERIOR ESQUERDA 
   <div class="sidebar-left-top">
     <div class="search-box">
-      <input id="destino" type="text" placeholder="Procurar rota...">
-      <button class="tracar-rota" onclick="definirDestino()">
+      <input style="width: 82%;" id="destino" type="text" placeholder="Publicar rota...">
+      <button style="width: 15%;" class="tracar-rota" onclick="definirDestino()">
         <img src="src/img/Search_Icon.png" alt="search-ico">
       </button>
     </div>
-  </div>
+  </div> -->
 
  <!-- SIDEBAR ESQUERDA -->
-<div class="sidebar-left">
+<div style="top: 45px;" class="sidebar-left">
 
     <div class="title-sidebar-left">
       <p class="title-sidebar-letter">Rotas Publicadas</p>
     </div>
 
     <button class="buttom-sidebar-left-card" onclick="abrirOverlaySidebarLeftCard()">
-      <div class="card">
+      <div id="card1" class="card">
         <div class="card-content"><h2 class="nome-motorista">Igor</h2>⭐ 4.5<br></div>
         
         <div class="card-content-info-title">
@@ -57,9 +57,9 @@
 
 <!-- SOBREPOSIÇÃO SIDEBAR ESQUERDA -->
 <div id="overlay-sidebar-left-card" class="overlay-sidebar-left-card" onclick="fecharOverlaySidebarLeftCard()">
-  <div class="conteudo" onclick="event.stopPropagation()">
+  <div style="padding: 12px;" class="conteudo" onclick="event.stopPropagation()">
 
-    <div class="div-button-close">
+    <div style="border: none;" class="div-button-close">
       <button class="button-close" onclick="fecharOverlaySidebarLeftCard()">
         <img class="close-icon" src="src/img/close-icon.png" alt="close">
       </button>
@@ -67,18 +67,18 @@
 
     <div class="nome-foto-motorista">
       <img class="user-icon" src="src/img/user-icon.png" alt="profile">
-      <h2 class="nome-motorista">Motorista</h2>
+      <h2 class="nome-motorista">Igor</h2>
     </div>
 
     <div class="info-carona">
       <p class="tittle-info">Origem</p>
       <p>Faculdade ESUDA</p><br>
       <p class="tittle-info">Destino</p>
-      <p>Janga</p><br>
+      <p>Afogados</p><br>
       <p class="tittle-info">Horário</p>
       <p>22:00</p><br>
 
-      <button class="btn-solicitar-carona">
+      <button class="btn-solicitar-carona" onclick="solicitarCorrida()">
         <p class="txt-solicitar-carona">SOLICITAR</p>
       </button>
     </div>
@@ -96,9 +96,9 @@
 </div>
 <!-- SOBREPOSIÇÃO PERFIL -->
     <div id="overlay-perfil" class="overlay-perfil" onclick="fecharOverlayPerfil()">
-      <div class="conteudo" onclick="event.stopPropagation()">
+      <div style="padding: 12px;" class="conteudo" onclick="event.stopPropagation()">
 
-        <div class="div-button-close">
+        <div style="border: none;" class="div-button-close">
           <button class="button-close" onclick="fecharOverlayPerfil()">
             <img class="close-icon" src="src/img/close-icon.png" alt="close">
           </button>
@@ -124,19 +124,27 @@
     <div class="title-sidebar-right">
       <p class="title-sidebar-letter">Corridas Solicitadas</p>
     </div>
-    <button class="buttom-sidebar-right-card" onclick="">
+    <!-- <button id="buttom-sidebar-right-card1" class="buttom-sidebar-right-card">
     <div class="card">
       <h3 class="nome-motorista">Daniel</h3><br>
       <strong>Rota:</strong> ESUDA → Janga<br><br>
-      <span class="status"><strong>Pendente</strong></span>
+      <span id="status" class="status"><strong>Pendente</strong></span>
+    </div>
+    </button> -->
+    <button style="display: none;" id="buttom-sidebar-right-card" class="buttom-sidebar-right-card">
+    <div class="card">
+      <h3 class="nome-motorista">Igor</h3><br>
+      <strong>Rota:</strong> ESUDA → Afogados<br><br>
+      <span id="status" class="status" onclick=" cancelarCorrida()"><strong>Pendente</strong></span>
     </div>
     </button>
+
 </div>
 <!-- SOBREPOSIÇÃO SIDEBAR DIREITA -->
     <div id="overlay-sidebar-right-card" class="overlay-sidebar-right-card" onclick="fecharOverlaySidebarRightCard()">
-      <div class="conteudo" onclick="event.stopPropagation()">
+      <div style="padding: 12px;" class="conteudo" onclick="event.stopPropagation()">
 
-        <div class="div-button-close">
+        <div style="border: none;" class="div-button-close">
           <button class="button-close" onclick="fecharOverlaySidebarRightCard()">
             <img class="close-icon" src="src/img/close-icon.png" alt="close">
           </button>

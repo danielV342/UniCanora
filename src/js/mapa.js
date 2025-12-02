@@ -80,3 +80,20 @@ function abrirOverlayPerfil() {
 function fecharOverlayPerfil() {
   document.getElementById("overlay-perfil").style.display = "none";
 }
+
+function solicitarCorrida() {
+  document.getElementById("buttom-sidebar-right-card").style.display = "flex"
+  document.getElementById("overlay-sidebar-left-card").style.display = "none"
+  document.getElementById("card1").style.display = "none"
+
+}
+
+function cancelarCorrida() {
+  document.getElementById("buttom-sidebar-right-card").style.display = "none"
+  document.getElementById("card1").style.display = "flex"
+}
+
+const btn = document.getElementById("status");
+
+  btn.onmouseover = () => btn.textContent = "Cancelar?";
+  btn.onmouseout  = () => btn.textContent = "Pendente";
