@@ -14,17 +14,26 @@ body {
   height: 100vh;
 }
 
-.left-side {
+/* .left-side {
   flex: 1;
   background-color: #008c8c;
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
-.left-side img {
-  width: 80%;
-  max-width: 500px;
+.left-side {
+  flex: 1;
+  background-color: #008080;
+  background-image: url('/src/img/img-login.jpeg');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
 }
 
 .right-side {

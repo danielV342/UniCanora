@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="src/imagens/logo_unicarona.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/src/img/logo-unicarona.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="src/css/reset.css">
     <link rel="stylesheet" href="src/css/cadastro.css">
@@ -29,16 +29,16 @@
                         <label for="name">Nome completo</label>
                         <div class="input-with-icon">
                             <i class="fas fa-user"></i>
-                            <input type="text" id="name" class="form-control" placeholder="Digite seu nome completo">
+                            <input type="text" id="name" class="form-control" placeholder="Digite seu nome completo" required>
                         </div>
                         <div class="error-message" id="nameError">Por favor, insira seu nome completo</div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="email">E-mail</label>
+                        <label for="email">E-mail Institucional</label>
                         <div class="input-with-icon">
                             <i class="fas fa-envelope"></i>
-                            <input type="email" id="email" class="form-control" placeholder="matricula@faculdade.com.br">
+                            <input type="email" id="email" class="form-control" placeholder="matricula@faculdade.com.br" required>
                         </div>
                         <div class="error-message" id="emailError">Por favor, insira um e-mail válido</div>
                     </div>
@@ -47,14 +47,14 @@
                         <label for="phone">Telefone</label>
                         <div class="input-with-icon">
                             <i class="fas fa-phone"></i>
-                            <input type="tel" id="phone" class="form-control" placeholder="(81) 99999-9999">
+                            <input type="tel" id="phone" class="form-control" placeholder="(81) 99999-9999" required>
                         </div>
                         <div class="error-message" id="phoneError">Por favor, insira um telefone válido</div>
                     </div>
 
                     <div class="select-group">
                         <label for="gender">Passageiro ou Motorista?</label>
-                        <select id="gender" class="select-control">
+                        <select id="gender" class="select-control" required>
                             <option value="" disabled selected hidden>Selecione</option>
                             <option value="male">Passageiro</option>
                             <option value="female">Motorista</option>
@@ -67,7 +67,7 @@
                         <label for="password">Senha</label>
                         <div class="input-with-icon">
                             <i class="fas fa-lock"></i>
-                            <input type="password" id="password" class="form-control" placeholder="Crie uma senha segura">
+                            <input type="password" id="password" class="form-control" placeholder="Crie uma senha segura" required>
                         </div>
                         <div class="error-message" id="passwordError">A senha deve ter pelo menos 8 caracteres</div>
                     </div>
@@ -76,7 +76,7 @@
                         <label for="confirmPassword">Confirmar senha</label>
                         <div class="input-with-icon">
                             <i class="fas fa-lock"></i>
-                            <input type="password" id="confirmPassword" class="form-control" placeholder="Digite a senha novamente">
+                            <input type="password" id="confirmPassword" class="form-control" placeholder="Digite a senha novamente" required>
                         </div>
                         <div class="error-message" id="confirmPasswordError">As senhas não coincidem</div>
                     </div>
@@ -91,10 +91,6 @@
                         <i class="fab fa-google"></i> Entrar com Google
                     </button>
                 </form>
-                
-                <div class="login-link">
-                    Já tem uma conta? <a href="#">Faça login</a>
-                </div>
 
                 <div class="success-message" id="successMessage">
                     <i class="fas fa-check-circle"></i> Cadastro realizado com sucesso!

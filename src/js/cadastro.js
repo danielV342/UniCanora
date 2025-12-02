@@ -187,29 +187,3 @@ document.getElementById('phone').addEventListener('input', function(e) {
 
     e.target.value = value;
 });
-
-// Adicionar efeito de animação aos elementos
-document.addEventListener('DOMContentLoaded', function() {
-    const fadeElements = document.querySelectorAll('.fade-in');
-    fadeElements.forEach((el, index) => {
-        setTimeout(() => {
-            el.style.opacity = 1;
-        }, index * 200);
-    });
-    
-    // Ajustar altura do formulário para garantir que não haja scroll visível
-    const adjustFormHeight = () => {
-        const formContainer = document.querySelector('.form-container');
-        const formSection = document.querySelector('.form-section');
-        
-        if (formContainer.clientHeight > formSection.clientHeight) {
-            formSection.style.overflowY = 'auto';
-        } else {
-            formSection.style.overflowY = 'hidden';
-        }
-    };
-
-    // Ajustar altura após carregamento e redimensionamento
-    setTimeout(adjustFormHeight, 100);
-    window.addEventListener('resize', adjustFormHeight);
-});

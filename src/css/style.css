@@ -44,7 +44,7 @@ nav ul li a {
 }
 
 .hero {
-    background-image: url('carro.jpg'); /* Substitua 'carro.jpg' pela sua imagem */
+    background-image: url('/src/img/carro.jpeg'); /* Substitua 'carro.jpg' pela sua imagem */
     background-size: cover;
     background-position: center;
     height: 100vh;
