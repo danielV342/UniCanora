@@ -57,7 +57,7 @@
 <div id="overlay-tracar" class="overlay-tracar" onclick="fecharOverlayTracar()">
   <div class="card" onclick="event.stopPropagation()">
 
-    <div class="div-button-close">
+    <div style="border: none;" class="div-button-close">
       <button class="button-close" onclick="fecharOverlayTracar()">
         <img class="close-icon" src="src/img/close-icon.png" alt="close">
       </button>
@@ -81,9 +81,9 @@
 
 <!-- SOBREPOSIÇÃO SIDEBAR ESQUERDA -->
 <div id="overlay-sidebar-left-card" class="overlay-sidebar-left-card" onclick="fecharOverlaySidebarLeftCard()">
-  <div class="conteudo" onclick="event.stopPropagation()">
+  <div style="padding: 12px;" class="conteudo" onclick="event.stopPropagation()">
 
-    <div class="div-button-close">
+    <div style="border: none" class="div-button-close">
       <button class="button-close" onclick="fecharOverlaySidebarLeftCard()">
         <img class="close-icon" src="src/img/close-icon.png" alt="close">
       </button>
@@ -103,7 +103,7 @@
       <p>22:00</p><br>
 
       <button class="btn-solicitar-carona">
-        <p class="txt-solicitar-carona">SOLICITAR</p>
+        <p class="txt-solicitar-carona">ACEITAR</p>
       </button>
     </div>
 
@@ -161,14 +161,35 @@
       <div class="conteudo" onclick="event.stopPropagation()">
 
         <div class="div-button-close">
+           <div style="width: 100%; display: flex; flex-direction: row; align-items: center; gap: 10px; justify-content: flex-start; ">
+          
+          <h2 class="nome-motorista">CHAT</h2>
+          <p>-</p>
+          <h2 class="nome-motorista">Motorista</h2> 
+        
+        </div>
           <button class="button-close" onclick="fecharOverlaySidebarRightCard()">
             <img class="close-icon" src="src/img/close-icon.png" alt="close">
           </button>
+          
+          
         </div>
+       <div style="height: 35vh;"></div>
+       <div style="width: 100%;">
+        <input style=
+        "width: 100%; 
+        display: flex; 
+        flex-direction: row; 
+        align-items: flex-start; 
+        height: 40px; 
+        padding: 10px 10px 0px 10px; 
+        border-radius: 0px 0px 12px 12px; 
+        background-color: rgb(216, 206, 193); 
+        border: none;" 
+        type="text" id="text" placeholder="Digite aqui">
 
-        <h2 class="nome-motorista">Motorista</h2> 
-        <p>Informações da rota selecionada.</p>
 
+       </div>
       </div>
     </div>
 
