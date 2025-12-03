@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniCarona</title>
+  <link rel="shortcut icon" href="/src/img/logo-unicarona.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+  <link rel="stylesheet" href="src/css/mapa.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- MAPA -->
+  <div id="map"></div>
+
+ <!-- SIDEBAR ESQUERDA -->
+<div style="top: 45px; display: flex; padding: 0px;" class="sidebar-left">
+
+    <div style="display: flex; position: relative; background-color: transparent; height: 100%;" id="overlay-sidebar-right-card" class="overlay-sidebar-right-card">
+      <div class="conteudo">
+
+        <div class="div-button-close">
+           <div style="width: 100%; display: flex; flex-direction: row; align-items: center; gap: 10px; justify-content: flex-start; ">
+          
+          <h2 class="nome-motorista">CHAT</h2>
+          <p>-</p>
+          <h2 class="nome-motorista">Motorista</h2> 
+        
+        </div>
+          
+          
+        </div>
+       <div style="height: 41.5vh;"></div>
+       <div style="width: 100%;">
+        <input style=
+        "width: 100%; 
+        display: flex; 
+        flex-direction: row; 
+        align-items: flex-start; 
+        height: 40px; 
+        padding: 10px 10px 0px 10px; 
+        border-radius: 0px 0px 12px 12px; 
+        background-color: rgb(216, 206, 193); 
+        border: none;" 
+        type="text" id="text" placeholder="Digite aqui">
+
+
+       </div>
+      </div>
+    </div>
+
+</div>
+
+
+
+<!-- PERFIL DO USUÁRIO -->
+<div class="profile">
+  <div style="width: 100%; height: 100%;">
+    <button type="button" class="button-overlay" onclick="abrirOverlayPerfil()">
+    <img class="user-icon" src="src/img/user-icon.png" alt="profile">
+    </button>
+  </div>
+</div>
+<!-- SOBREPOSIÇÃO PERFIL -->
+    <div id="overlay-perfil" class="overlay-perfil" onclick="fecharOverlayPerfil()">
+      <div style="padding: 12px;" class="conteudo" onclick="event.stopPropagation()">
+
+        <div style="border: none;" class="div-button-close">
+          <button class="button-close" onclick="fecharOverlayPerfil()">
+            <img class="close-icon" src="src/img/close-icon.png" alt="close">
+          </button>
+        </div>
+
+        <img class="user-icon" src="src/img/user-icon.png" alt="profile">
+        <h2 class="nome-motorista">Daniel12</h2>
+        <div class="info-carona">
+          <p class="tittle-info">Nome completo</p>
+          <p>Daniel Viana Dias</p><br>
+          <p class="tittle-info">E-mail</p>
+          <p>17242199@esuda.edu.br</p><br>
+          <p class="tittle-info">Telefone</p>
+          <p>(81) 9 9358-9425</p><br>
+        </div>
+        <button onclick="abrirOverlayPerfilNumero()" class="button-option-perfil">Atualizar telefone</button>
+        <button onclick="abrirOverlayPerfilSenha()" class="button-option-perfil">Alterar senha</button>
+    </div>
+    </div>
+    <!-- SOBREPOSIÇÃO ALTERAR NUMERO -->
+    <div id="overlay-perfil-numero" class="overlay-perfil-numero" onclick="fecharOverlayPerfilNumero()">
+      <div style="padding: 12px;" class="conteudo" onclick="event.stopPropagation()">
+
+        <div style="border: none;" class="div-button-close">
+          <button class="button-close" onclick="fecharOverlayPerfilNumero()">
+            <img class="close-icon" src="src/img/close-icon.png" alt="close">
+          </button>
+        </div>
+        <p>Insira seu novo número</p>
+        <input style="width: 100%;" type="text" name="" id="">
+        <button onclick="salvarNumero()" class="button-option-perfil">Salvar</button>
+      </div>
+    </div>
+
+<!-- SOBREPOSIÇÃO ALTERAR SENHA -->
+    <div id="overlay-perfil-senha" class="overlay-perfil-senha" onclick="fecharOverlayPerfilSenha()">
+      <div style="padding: 12px;" class="conteudo" onclick="event.stopPropagation()">
+
+        <div style="border: none;" class="div-button-close">
+          <button class="button-close" onclick="fecharOverlayPerfilSenha()">
+            <img class="close-icon" src="src/img/close-icon.png" alt="close">
+          </button>
+        </div>
+        <p>Insira sua nova senha</p>
+        <input style="width: 100%;" type="password" name="" id="">
+        <button onclick="salvarSenha()" class="button-option-perfil">Salvar</button>
+      </div>
+    </div>
+
+
+
+
+
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+  <script src="src/js/mapa.js"></script>
+
+</body>
+</html>

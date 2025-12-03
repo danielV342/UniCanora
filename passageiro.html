@@ -114,8 +114,37 @@
           <p class="tittle-info">Telefone</p>
           <p>(81) 9 9358-9425</p><br>
         </div>
-        <button class="button-option-perfil">Editar perfil</button>
-        <button class="button-option-perfil">Alterar senha</button>
+        <button onclick="abrirOverlayPerfilNumero()" class="button-option-perfil">Atualizar telefone</button>
+        <button onclick="abrirOverlayPerfilSenha()" class="button-option-perfil">Alterar senha</button>
+    </div>
+    </div>
+    <!-- SOBREPOSIÇÃO ALTERAR NUMERO -->
+    <div id="overlay-perfil-numero" class="overlay-perfil-numero" onclick="fecharOverlayPerfilNumero()">
+      <div style="padding: 12px;" class="conteudo" onclick="event.stopPropagation()">
+
+        <div style="border: none;" class="div-button-close">
+          <button class="button-close" onclick="fecharOverlayPerfilNumero()">
+            <img class="close-icon" src="src/img/close-icon.png" alt="close">
+          </button>
+        </div>
+        <p>Insira seu novo número</p>
+        <input style="width: 100%;" type="text" name="" id="">
+        <button onclick="salvarNumero()" class="button-option-perfil">Salvar</button>
+      </div>
+    </div>
+
+<!-- SOBREPOSIÇÃO ALTERAR SENHA -->
+    <div id="overlay-perfil-senha" class="overlay-perfil-senha" onclick="fecharOverlayPerfilSenha()">
+      <div style="padding: 12px;" class="conteudo" onclick="event.stopPropagation()">
+
+        <div style="border: none;" class="div-button-close">
+          <button class="button-close" onclick="fecharOverlayPerfilSenha()">
+            <img class="close-icon" src="src/img/close-icon.png" alt="close">
+          </button>
+        </div>
+        <p>Insira sua nova senha</p>
+        <input style="width: 100%;" type="password" name="" id="">
+        <button onclick="salvarSenha()" class="button-option-perfil">Salvar</button>
       </div>
     </div>
 

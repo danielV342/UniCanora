@@ -208,7 +208,9 @@ body {
 .overlay,
 .overlay-perfil,
 .overlay-sidebar-left-card,
-.overlay-sidebar-right-card {
+.overlay-sidebar-right-card,
+.overlay-perfil-senha,
+.overlay-perfil-numero {
   position: fixed;
   top: 0;
   left: 0;
@@ -218,7 +220,7 @@ body {
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(3px);
 
-  display: none;         /* aparece com JS */
+  display: none; 
   align-items: center;
   justify-content: center;
   
@@ -316,6 +318,7 @@ body {
   border-radius: 5px;
   background-color: aquamarine;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 /* Nome e foto */

@@ -100,6 +100,33 @@ function aceitarPassageiro() {
   document.querySelector(".buttom-sidebar-left-card").style.display = "none"
 }
 
+function abrirOverlayPerfilNumero() {
+  document.getElementById("overlay-perfil-numero").style.display = "flex"
+  document.getElementById("overlay-perfil").style.display = "none"
+
+}
+
+function fecharOverlayPerfilNumero() {
+  document.getElementById("overlay-perfil-numero").style.display = "none"
+}
+
+function salvarNumero() {
+  document.getElementById("overlay-perfil-numero").style.display = "none"
+}
+
+function abrirOverlayPerfilSenha() {
+  document.getElementById("overlay-perfil-senha").style.display = "flex"
+  document.getElementById("overlay-perfil").style.display = "none"
+
+}
+
+function fecharOverlayPerfilSenha() {
+  document.getElementById("overlay-perfil-senha").style.display = "none"
+}
+
+function salvarSenha() {
+  document.getElementById("overlay-perfil-senha").style.display = "none"
+}
 
 const btn = document.getElementById("status")
 
